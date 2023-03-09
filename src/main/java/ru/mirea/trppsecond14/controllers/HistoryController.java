@@ -1,10 +1,10 @@
-package ru.mirea.trpp_second_14.controllers;
+package ru.mirea.trppsecond14.controllers;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import ru.mirea.trpp_second_14.entity.History;
+import ru.mirea.trppsecond14.entity.History;
 
 import java.io.InputStreamReader;
 import java.util.List;
@@ -19,7 +19,9 @@ public class HistoryController {
 
     /** Конструктор. */
     public HistoryController() {
-        historyList = new CsvToBeanBuilder<History>(new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(History.class).build().parse();
+        historyList = new CsvToBeanBuilder<History>(new InputStreamReader(
+            this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(
+                History.class).build().parse();
     }
 
     /**
